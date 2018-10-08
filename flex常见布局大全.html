@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex常见布局大全</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            width:1000px;
+            margin:100px auto;
+        }
+        .box{
+            width:500px;
+            height:200px;
+            background:#cccccc;
+            margin-bottom:20px;
+            display:-webkit-flex;
+            display:flex;
+            /*水平居中*/
+            -webkit-justify-content: center;
+            justify-content: center;
+            /*垂直居住*/
+            -webkit-align-items: center;
+            align-items:center;
+
+        }
+        .box div{
+            width:100px;
+            height:50px;
+            background:orange;
+            margin-right:10px;
+        }
+
+        .box2{
+            width:480px;
+            height:200px;
+            background:#cccccc;
+            margin-bottom:20px;
+            padding:0 10px;
+            display:-webkit-flex;
+            display:flex;
+            /*两侧*/
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            /*垂直居住*/
+            -webkit-align-items: center;
+            align-items:center;
+
+        }
+        .box2 div{
+            padding:15px 50px;
+            background:orange;
+            margin-right:10px;
+        }
+
+        .box3{
+            width:480px;
+            height:200px;
+            background:#cccccc;
+            margin-bottom:20px;
+            padding:0 10px;
+            display:-webkit-flex;
+            display:flex;
+            /*两侧*/
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            /*垂直居住*/
+            -webkit-align-items: center;
+            align-items:center;
+
+        }
+        .box3 div{
+            -webkit-flex: 1;
+            flex:1;
+            padding:15px 0;
+            text-align: center;
+            background:orange;
+            border:1px solid black;
+        }
+        .box4{
+            width:500px;
+            height:300px;
+            background: #cccccc;
+            padding:0 10px;
+            display:flex;
+            display: -webkit-flex;
+            align-items:center;
+            -webkit-align-items:center;
+            margin-bottom:20px;
+        }
+        .box4-l{
+            flex:1;
+            -webkit-flex: 1;
+            height:150px;
+            background:orange;
+        }
+        .box4-r{
+            flex:3;
+            -webkit-flex: 3;
+            padding:0 20px;
+
+        }
+        .box4-r h1{
+            font-size:20px;
+            padding:10px 0;
+        }
+        .box4-r .p-but{
+            text-align: right;
+        }
+        .box4-r .p-but button{
+            background:orange;
+            padding:8px 30px;
+            border:none;
+            color:#ffffff;
+        }
+        .cont{
+            margin-bottom:20px;
+        }
+        .cont p{
+            font-size:18px;
+            color:#cccccc;
+
+        }
+        .box5{
+            width:500px;
+            height:200px;
+            background:#cccccc;
+            margin-bottom:20px;
+            display:-webkit-flex;
+            display:flex;
+            /*两侧*/
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            /*垂直居住*/
+            -webkit-align-items: center;
+            align-items:center;
+        }
+        .box5 div{
+            -webkit-flex: 1;
+            flex:1;
+            /*flex:auto; 于flex:1;效果一样*/
+            padding:15px 0;
+            text-align: center;
+            background:orange;
+            border:1px solid black;
+        }
+        .box6{
+            width:500px;
+            height:200px;
+            background:#cccccc;
+            margin-bottom:20px;
+            display:-webkit-flex;
+            display:flex;
+            /*两侧*/
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            /*垂直居住*/
+            -webkit-align-items: center;
+            align-items:center;
+        }
+        .box6 div{
+            -webkit-flex: 1;
+            flex:none;
+            padding:15px 0;
+            text-align: center;
+            background:orange;
+            border:1px solid black;
+        }
+        .box7{
+            width:500px;
+            height:200px;
+            background:#cccccc;
+            margin-bottom:20px;
+            display:-webkit-flex;
+            display:flex;
+            /*两侧*/
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            /*垂直居住*/
+            -webkit-align-items: center;
+            align-items:center;
+        }
+        .box7 div{
+            -webkit-flex: 1;
+            flex:1;
+            padding:15px 0;
+            text-align: center;
+            background:orange;
+            border:1px solid black;
+        }
+
+        .box8{
+            width:500px;
+            height:200px;
+            background:#cccccc;
+            margin-bottom:20px;
+            display:-webkit-flex;
+            display:flex;
+            /*两侧*/
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            /*垂直居住*/
+            -webkit-align-items: center;
+            align-items:center;
+        }
+        .box8 div{
+            flex-grow: 1;
+            padding:15px 0;
+            text-align: center;
+            background:orange;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div class="cont">
+    <p style="color:red; margin-bottom:10px;">备注：所有浏览器都支持flex属性，ie10以上，webkit内核浏览器需加-webkit-,火狐加-moz-box，ie加</p>
+    <p>兼容处理：https://www.cnblogs.com/yangjie-space/p/4856109.html</p>
+    <p style="color:red;">容器常用属性：</p>
+    <p>flex-direction:row | row-reverse | column | column-reverse;
+        备注：iteams的排列方式，常用为row;</p>
+    <p>flex-wrap:nowrap | wrap | wrap-reverse;
+        备注：默认在一行，定义wrap为强制换行</p>
+    <p>flex-flow： flex-direction || flex-wrap;
+        备注：两个属性的简写</p>
+    <p>justify-content：flex-start | flex-end | center | space-between | space-around;
+        备注：水平居中</p>
+    <p>
+        align-items：flex-start | flex-end | center | baseline | stretch;
+        备注：垂直居中；
+    </p>
+    <p>align-content：flex-start | flex-end | center | space-between | space-around | stretch;
+        多根轴线的对齐方式</p>
+</div>
+<div class="box">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+<div class="box2">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+<ul class="box3">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</ul>
+<div class="box4">
+    <div class="box4-l"></div>
+    <div class="box4-r">
+        <h1>百知教育</h1>
+        <p>北京百知教育科技有限公司郑州分公司是落实国家软件人才发展战略、促进大学生创新就业，由中关村软件园人才基地与共青团中国青年职业能力培训基地合作设立的互联网+创新型技术人才培训及人力资源服务机构</p>
+        <p class="p-but"><button>点击详情</button></p>
+    </div>
+</div>
+<div class="cont">
+    <p style="color:red; margin-bottom:20px;">flex的items属性：</p>
+    order:排列顺序, 默认为0。数值越小，排列越靠前<br>
+    flex-grow:放大比例，默认为0，即如果存在剩余空间，也不放大。<br>
+    flex-shrink:缩小比例，默认为1，即如果空间不足，该项目将缩小。flex-shrink为0,大小不变<br>
+    flex-basis：w/h/auto，设置px为固定值<br>
+    align-self：auto | flex-start | flex-end | center | baseline | stretch;不一样的对齐方法<br>
+    <p style="color:red;">flex:auto (1 1 auto) 和 none (0 0 auto)。<br></p>
+</div>
+<div class="box5">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+<div class="box6">
+    <div>1</div>
+    <div >2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+<div class="box7">
+    <div style="order:3; ">1</div>
+    <div style="order:2; ">2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+<div class="box8">
+    <div>1</div>
+    <div style="flex-grow: 2">2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+<div>
+    <p>备注：有一个奇怪问题，如果不给容器加align-items属性，items依然是块级元素，如果加了align-items属性，items会变成行内块</p>
+    <p>备注：添加flex-shrink的item不能定义padding值，否则不缩小,且定义的宽度无效</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <title>rem--cs</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        html{
+            height:100%;
+        }
+        body{
+            height:100%;
+            font-size:16px;
+            background:#cccccc;
+        }
+        .header{
+            width:100%;
+            height:50px;
+            background: #0aab8a;
+            text-align: center;
+            line-height: 50px;
+        }
+        .footer{
+            width:100%;
+            height:50px;
+            background: #0c1622;
+            color:#ffffff;
+            text-align: center;
+            line-height: 50px;
+        }
+        .content{
+            width:100%;
+            height:100%;
+        }
+        .left{
+            float: left;
+            width:20%;
+            height:700px;
+            background: #888888;
+        }
+        .main{
+            float: left;
+            width:80%;
+            height:700px;
+            background: #3adce9;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="header">百知教育</div>
+<div class="content">
+    <div class="left">left</div>
+    <div class="main">大布局用百分比，小块用px，px为效果图的一半；</div>
+</div>
+<div style="clear:both; "></div>
+<div class="footer"> 百知备案信息</div>
+
+</body>
+</html>

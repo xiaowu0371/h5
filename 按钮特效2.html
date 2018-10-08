@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>按钮特效</title>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+
+        }
+        .but{
+            width:200px;
+            height:60px;
+            line-height:60px;
+            text-align: center;
+            margin:200px auto;
+            background:rgb(41, 41, 41);
+            border-radius: 10px;
+            position: relative;
+            /* overflow: hidden; */
+            box-shadow: 0 0 10px #cccccc;
+        }
+        .but a{
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            color:#ffffff;
+            font-size:20px;
+            z-index: 9;
+        }
+        .but span{
+            position:absolute;
+            left:0;
+            top:0;  
+            display: inline-block;
+            width:200px;
+            height:60px;
+            -webkit-animation: s 2s infinite;
+            animation: s 2s infinite;
+            opacity:1;
+            border-radius: 10px;
+            border:1px solid red;
+        }
+        @keyframes s{
+            0%{transform: scale(0,0); }
+            100%{transform: scale(2,2); }
+        }
+        @-webkit-keyframes s{
+            0%{transform: scale(0,0); }
+            100%{transform: scale(2,2); }
+        }
+        
+    </style>
+</head>
+<body>
+   <p class="but"><span></span><a href="#">按钮特效</a></p> 
+
+</body>
+</html>

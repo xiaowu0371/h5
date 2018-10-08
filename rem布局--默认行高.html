@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rem布局--默认行高</title>
+    <style>
+        *{ margin:0; padding:0;}
+        body,div,p,ul,li,a,span,h1,h2,h3,h4,h5,h6{ font-size:0.26rem; }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+<div style="border:1px solid #cccccc;">div默认行高</div>
+<p style="border:1px solid #cccccc;">p默认行高</p>
+<h1 style="border:1px solid #cccccc;">h1默认行高</h1>
+<ul style="border:1px solid #cccccc;">
+    <li style="border:1px solid red;">li默认行高</li>
+    <li style="border:1px solid #cccccc;">li默认行高</li>
+    <li style="border:1px solid #cccccc;">li默认行高</li>
+</ul>
+<script>
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            isIOS = navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+            dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1,
+            dpr = window.top === window.self ? dpr : 1, //被iframe引用时，禁止缩放
+            dpr = 1,
+            scale = 1 / dpr,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+        docEl.dataset.dpr = dpr;
+        var metaEl = doc.createElement('meta');
+        metaEl.name = 'viewport';
+        metaEl.content = 'initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale;
+        docEl.firstElementChild.appendChild(metaEl);
+        var recalc = function() {
+            var width = docEl.clientWidth;
+            if (width / dpr > 750) {
+                width = 750 * dpr;//750为效果图宽度
+            }
+            // 乘以100，px : rem = 100 : 1
+            docEl.style.fontSize = 100 * (width / 750) + 'px';
+        };
+        recalc()
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+    })(document, window);
+
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>box-shadow</title>
+    <style>
+    div{
+        width: 200px;
+        height: 300px;
+        box-shadow:0 0 10px #cccccc;
+        margin:0 auto;
+        margin-top:50px;
+    }
+    .box{
+        box-shadow:2px 6px 10px 30px #cccccc;
+    }
+    p:before{content:open-quote;}
+    p:after{content:close-quote; }
+    </style>
+</head>
+<body>
+    <p>box-shadow：阴影水平偏移值（可取正负值）；阴影垂直偏移值（可取正负值）；阴影模糊值；外扩(阴影大小)；阴影颜色</p>
+    <p>ie9一下不支持</p>
+    <p>content用于插入生成内容；<br>
+            content属性与 :before 及 :after 伪元素配合使用，将生成内容放在一个元素内容的前面或后面。</p>
+    <div></div>
+    <div class="box"></div>
+</body>
+</html>

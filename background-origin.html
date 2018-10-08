@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>background-origin</title>
+    <style>
+            div{
+                width:300px;
+                height:300px;
+                background:url(img/2.jpeg) no-repeat ;
+                background-size:cover;
+                background-origin:content-box;
+                border:10px solid blue;
+                margin:100px auto;
+                padding:50px;
+                font-size:20px;
+                color:#ffffff;
+            }
+            .box{
+                background-origin: padding-box;
+            }
+            
+            </style>
+</head>
+<body>
+    <div>
+        background-clip属性设置,ie6、7、8不支持
+    </div>
+    <div class="box">
+        background-clip属性设置,ie6、7、8不支持
+    </div>
+</body>
+</html>

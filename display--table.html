@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>diaplay--table</title>
+    <style>
+        .table{
+            display: table;
+            border-collapse: collapse;
+            border-spacing:0;
+        }
+        .thead{
+            display:table-header-group;
+            border-collapse: collapse;
+            border-spacing:0;
+        }
+        .tbody{
+            display: table-row-group;
+        }
+        .tr{
+            display: table-row;
+        }
+        .td{
+            display:table-cell;
+            width:100px;
+            height:30px;
+            border:2px solid red;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div class="table">
+    <div class="thead">
+        <div class="tr">
+            <div class="td">1</div>
+            <div class="td">2</div>
+            <div class="td">3</div>
+        </div>
+
+    </div>
+    <div class="tbody">
+        <div class="tr">
+            <div class="td">0</div>
+            <div class="td">0</div>
+            <div class="td">0</div>
+        </div>
+        <div class="tr">
+            <div class="td">9</div>
+            <div class="td">9</div>
+            <div class="td">9</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+
+  <style>
+    .mask{
+        width:475px;
+        height:260px;
+        background-image:url("img/1.jpg");
+
+        /* 取值是图片路径 */
+        -webkit-mask-image:url("img/2.png");
+        mask-image: url("img/2.png");
+    }
+  </style>
+ </head>
+ <body>
+        <p>遮罩，就是原始图片只显示遮罩图片非透明的部分,遮罩层重复平铺到div上</p>
+        <p>mask的用吗与background的用法相同</p>
+    <div class="mask"> </div>
+ </body>
+
+</html>

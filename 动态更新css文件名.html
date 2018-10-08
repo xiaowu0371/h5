@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动态更新css文件名</title>
+    <!-- <link rel="stylesheet" href=""> -->
+</head>
+<body>
+    <div class="box">
+        动态更新css文件名：可以解决引浏览器缓存造成的修改css，js文件后用户端不更新问题。在每次修改css样式之后修改v--版本好即可。
+    </div>
+    <script>
+    var myHead=document.getElementsByTagName("head")[0];
+    var mystyle=document.createElement("link");
+    var v="?v-2018-9";
+    mystyle.setAttribute('rel','stylesheet');   //必须的加，否则样式加载不上
+    mystyle.href='https://moblie-2018.oss-cn-beijing.aliyuncs.com/test/style.css'+ v ;   //css存放地址
+
+ 
+    myHead.appendChild(mystyle);
+    </script>
+</body>
+</html>

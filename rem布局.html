@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+    <title>rem布局</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            font-size:0.2rem;
+        }
+        .header{
+            width:100%;
+            height:0.5rem;
+            background: #0aab8a;
+            position: fixed;
+            color:#ffffff;
+            text-align: center;
+            line-height: 0.5rem;
+        }
+        .footer{
+            width:100%;
+            height:0.5rem;
+            background: #0c1622;
+            color:#ffffff;
+            text-align: center;
+            line-height: 0.5rem;
+        }
+        .content{
+            width:7.5rem;
+            height:100%;
+            margin:0 auto;
+        }
+        .left{
+            float: left;
+            width:2rem;
+            height:14rem;
+            background: #888888;
+        }
+        .main{
+            float: left;
+            width:5.5rem;
+            height:14rem;
+            background: #3adce9;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">百知教育</div>
+<div class="content">
+    <div class="left">left</div>
+    <div class="main">main</div>
+</div>
+<div style="clear:both; "></div>
+<div class="footer"> 百知备案信息</div>
+<!--html font-size计算  rem计算 ————网易用法-->
+<script>
+    (function(doc, win) {
+        var docEl = doc.documentElement,
+            isIOS = navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+            dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1,
+            dpr = window.top === window.self ? dpr : 1, //被iframe引用时，禁止缩放
+            dpr = 1,
+            scale = 1 / dpr,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+        docEl.dataset.dpr = dpr;
+        var metaEl = doc.createElement('meta');
+        metaEl.name = 'viewport';
+        metaEl.content = 'initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale;
+        docEl.firstElementChild.appendChild(metaEl);
+        var recalc = function() {
+            var width = docEl.clientWidth;
+            if (width / dpr > 750) {
+                width = 750 * dpr;//750为效果图宽度
+            }
+            // 乘以100，px : rem = 100 : 1
+            docEl.style.fontSize = 100 * (width / 750) + 'px';
+        };
+        recalc()
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+    })(document, window);
+
+</script>
+</body>
+</html>

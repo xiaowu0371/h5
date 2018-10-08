@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>页面动态生成二维码</title>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+    <style>
+        *{ margin:0; padding:0; }
+        .box{ width:100%; height:300px; border:2px solid #cccccc; padding:50px; }
+        h1{ margin-bottom:30px;}
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        <h1>页面动态生成二维码模板</h1>
+        <div id="code"></div> 
+    </div>
+   
+
+    <script type="text/javascript">
+    $("#code").qrcode({ 
+    render: "table", //table方式 
+    width: 150, //宽度 
+    height:150, //高度 
+    text: "http://www.baidu.com" //任意内容 
+}); 
+
+// //如果生成的二维码内容包含文字，需要把字符串转换成UTF-8
+function toUtf8(str) {    
+    var out, i, len, c;    
+    out = "";    
+    len = str.length;    
+    for(i = 0; i < len; i++) {    
+        c = str.charCodeAt(i);    
+        if ((c >= 0x0001) && (c <= 0x007F)) {    
+            out += str.charAt(i);    
+        } else if (c > 0x07FF) {    
+            out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));    
+            out += String.fromCharCode(0x80 | ((c >>  6) & 0x3F));    
+            out += String.fromCharCode(0x80 | ((c >>  0) & 0x3F));    
+        } else {    
+            out += String.fromCharCode(0xC0 | ((c >>  6) & 0x1F));    
+            out += String.fromCharCode(0x80 | ((c >>  0) & 0x3F));    
+        }    
+    }    
+    return out;    
+} 
+var str = toUtf8("字符串测试！"); 
+$('#code').qrcode(str); 
+    </script>
+</body>
+</html>

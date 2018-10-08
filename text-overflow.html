@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>text-overflow</title>
+    <style>
+    .text_overflow{
+    width:160px; 
+    padding:40px 20px; 
+    border:2px solid #cccccc; 
+    /* 强制不折行 */
+    white-space:nowrap;   
+   /* 强制折行，段字折行 */
+    /* word-wrap:break-word; */
+    text-overflow:ellipsis; 
+    -o-text-overflow:ellipsis; 
+    overflow:hidden;
+}
+    </style>
+</head>
+<body>
+    <p style="color:red;">要实现溢出时产生省略号的效果还须定义：强制文本在一行内显示（white-space:nowrap）及溢出内容为隐藏（overflow:hidden）</p>
+    <div class="text_overflow">这段文字在超出外部div区域的时候会显示点点点。</div>
+</body>
+</html>

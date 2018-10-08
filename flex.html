@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex</title>
+    <style>
+        .box{
+            width:480px;
+            height:300px;
+            background:#cccccc;
+            padding:0 10px;
+            margin:100px auto;
+            display:flex;
+            display:-webkit-flex;
+            -webkit-justify-content: space-around;
+            justify-content: space-around;
+            align-items: center;
+            -webkit-align-items: center;
+
+        }
+        .box div{
+            padding:15px 50px;
+            background:orange;
+            border:1px solid black;
+        }
+
+        .box2{
+            width:480px;
+            height:300px;
+            background:#cccccc;
+            padding:0 10px;
+            margin:100px auto;
+            display:flex;
+            display:-webkit-flex;
+            -webkit-justify-content: space-around;
+            justify-content: space-around;
+            align-items: center;
+            -webkit-align-items: center;
+
+        }
+        .box2 div{
+            padding:15px 50px;
+            background:orange;
+            border:1px solid black;
+        }
+        .box3{
+            width:500px;
+            height:300px;
+            background:#cccccc;
+            margin:100px auto;
+            display:flex;
+            display:-webkit-flex;
+            align-items: flex-start ;
+            -webkit-align-items: flex-start;
+            /*-webkit-flex-wrap: wrap;*/
+            /*flex-wrap:wrap;*/
+
+        }
+        .box3 div{
+            -webkit-flex: 1;
+            flex:1;
+
+            height:50px;
+            background:orange;
+            border:1px solid black;
+            -webkit-flex-shrink: 1;
+            flex-shrink: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+<div class="box2">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+
+<div class="box3">
+    <div style="flex:0 0 200px;">1</div>
+    <div>2</div>
+    <div >3</div>
+    <div> 4</div>
+    <div> 5</div>
+    <div> 6</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过渡</title>
+    <style>
+        #div1{
+            width:100px;
+            height:100px;
+            background: red;
+            transition:2s;
+            -webkit-transition: 2s; /* chrome safari */
+
+        }
+        #div2{
+            width:100px;
+            height:100px;
+            background: cornflowerblue;
+            margin-top:200px;
+            transition: width 2s,height 2s,transform 2s,transform 2s;
+            -webkit-transition:width 3s,height 2s,transform 2s,-webkit-transform 2s; /* chrome safari */
+
+        }
+        #div2:hover{
+            width:400px;
+            height:400px;
+            -webkit-transform:rotate(120deg);/* Chrome, Safari, Opera */
+            transform:rotate(120deg);
+        }
+        #div3{
+            width:100px;
+            height:100px;
+            background: #00ad45;
+            margin-top:200px;
+            transition:2s;
+            -webkit-transition: 2s; /* chrome safari */
+
+        }
+
+    </style>
+</head>
+<body>
+<div id="div1">css3过渡：点击触发动画</div>
+<div id="div2">css3过度：伪类hover触发</div>
+<div id="div3">css3过渡：点击触发动画,不逆转</div>
+<script>
+    var odiv=document.getElementById("div1");
+    odiv.onclick = function(){
+        odiv.style.width = '300px';
+        //setTimeout 设置动画正向结束后的逆向效果及时间
+        setTimeout(function(){
+            odiv.style.width = '100px';
+        },3000);
+    }
+
+    var odiv3=document.getElementById("div3");
+    odiv3.onclick = function(){
+        odiv3.style.width = '300px';
+    }
+</script>
+
+<p style="margin-top:200px; color:#cccccc; ">https://www.cnblogs.com/xiaohuochai/p/5347930.html  文字介绍</p>
+</body>
+</html>
