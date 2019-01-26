@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <style>
+    li{
+        display: block;
+    }
+    
+    </style>
+</head>
+<body>
+    <div id="test-div">
+        <ul>
+            <li><span>JavaScript</span></li>
+            <li><span>Python</span></li>
+            <li><span>Swift</span></li>
+        </ul>
+    </div>
+    <script>
+        var arr=[];
+        $('#test-div ul').append('<li><span>Pascal</span></li>');
+        $('#test-div ul').append('<li><span>Lua</span></li>');
+        $('#test-div ul').append('<li><span>Ruby</span></li>');
+        for(var i=0;i<$('#test-div ul li').length;i++){
+            arr.push($('#test-div ul li').eq(i).text());
+        }
+        console.log(arr);
+        var arrSort=arr.sort();
+        console.log(arrSort);
+        for(var j=0;j<arrSort.length;j++){
+            $('#test-div ul li').eq(j).text(arrSort[j]);
+        }
+
+
+
+    </script>
+</body>
+</html>

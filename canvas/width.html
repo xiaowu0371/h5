@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>width/height</title>
+</head>
+<body>
+    <p>canvas元素其本质是一张图片，很多属性样式与img很像。与img的不同是，img可以设置不安等比缩放，但是canvas的style宽高始终等比</p>
+    <p>canvas，原始宽高比例为300*150；默认忽略段位，</p>
+    <p>canvas绘制与cssheight没有关系，跟画布大小有关系</p>
+    <canvas width="200" height="200" style="border:1px solid #333;"></canvas><br>
+  <button onclick="myfun()">点击改变cnavas高度</button><br>
+  <canvas id="mycanvas" >您的浏览器不支持canvas</canvas>  
+
+  <script>
+       
+      function myfun(){
+        let mycanvas=document.getElementById("mycanvas");
+        let ctx=mycanvas.getContext('2d');
+        mycanvas.width=300;
+        canvasH=50+100*Math.random();
+        mycanvas.height=canvasH;
+        mycanvas.style.background="green"; 
+        mycanvas.style.marginTop="20px";
+        ctx.fillStyle="orange";
+        ctx.arc(150, canvasH/2, canvasH/2, 0, 2 * Math.PI);
+        ctx.fill();
+      }
+  </script>
+</body>
+</html>

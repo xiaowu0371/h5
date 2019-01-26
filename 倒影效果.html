@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;}
+        img{
+            width:200px;
+            height: auto;
+        }
+    .shadow{
+        transform: rotateX(180deg);
+
+    }
+    .demo1{
+        -webkit-box-reflect: below;
+        -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(250, 250, 250, 0.1)));
+    }
+    .box{
+        position: absolute;
+        left:300px;
+        top:0;
+    }
+    </style>
+<style>
+</style>
+</head>
+<body>
+    <div >
+        <img class="demo1" src="img/m.png" alt="" /><br>
+    </div>
+    <div class="box">
+        <img  src="img/2.jpeg" alt="" /><br>
+        <img lass="shadow" src="img/2.jpeg" alt="" />
+    </div>
+
+    </div>
+</body>
+</html>

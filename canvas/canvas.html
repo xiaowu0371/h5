@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas</title>
+
+</head>
+<body>
+    <P>canvas默认的宽高是，300*150 ，需用canvas提供的api定义其宽高</P>
+    <canvas id="mycanvas" width=1000 height=500 style="border:1px solid #cccccc;">
+        您的浏览器不支持canvas
+    </canvas>
+
+    <script>
+    var c=document.getElementById("mycanvas");
+    var ctx=c.getContext("2d");
+    ctx.lineWidth = 3;
+    ctx.moveTo(0,0);
+    ctx.lineTo(200,100);
+    ctx.lineTo(100,30);
+    ctx.closePath();
+    ctx.stroke();
+
+    ctx.rect(0,130,200,100);
+    ctx.fillStyle="green";
+    ctx.fill();
+    ctx.closePath()
+
+    ctx.beginPath();
+    var g=ctx.createRadialGradient(300,300,10,400,350,50);
+    g.addColorStop(0,"green");
+    g.addColorStop(0.5,"blue");
+    g.addColorStop(1,"red");
+    ctx.fillStyle=g;
+    ctx.arc(300,300,100,0,2*Math.PI);
+    ctx.stroke();
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.font="30px Arial";
+    ctx.strokeText("你好,我是canvas绘画字体",300,60);
+
+
+    var grd=ctx.createLinearGradient(300,100,500,100);   //createLinearGradient(starx,stary,endx,endy)
+    grd.addColorStop(0,"green");
+    grd.addColorStop(0.5,"blue");
+    grd.addColorStop(1,"red");
+
+    ctx.beginPath();
+    ctx.font="30px Arial";
+    ctx.fillStyle=grd;
+    ctx.fillText("你好,我是canvas绘画字体",300,100);  //fillText("文字",起点x,起点y)
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="mycanvas">您的浏览器不支持canvas</canvas>
+
+    <script>
+    var c=document.getElementById("mycanvas");
+         ctx=c.getContext("2d");
+         c.width=window.innerWidth;
+         c.height=window.innerHeight;
+         ctx.fillStyle="red";
+
+        var x,y,z;
+        x=100;
+        y=100;
+							 
+		ctx.moveTo(x,y);
+		z=1;
+		ctx.bezierCurveTo(x,y-3*z,x-5*z,y-15*z,x-25*z,y-15*z);
+		ctx.bezierCurveTo(x-55*z,y-15*z,x-55*z,y+22.5*z,x-55*z,y+22.5*z);
+		ctx.bezierCurveTo(x-55*z,y+40*z,x-35*z,y+62*z,x,y+80*z);
+		ctx.bezierCurveTo(x+35*z,y+62*z,x+55*z,y+40*z,x+55*z,y+22.5*z);
+		ctx.bezierCurveTo(x+55*z,y+22.5*z,x+55*z,y-15*z,x+25*z,y-15*z);
+        ctx.bezierCurveTo(x+10*z,y-15*z,x,y-3*z,x,y);
+        ctx.fill();
+    </script>
+</body>
+</html>

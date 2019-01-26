@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>webg1</title>
+</head>
+<body>
+ <canvas id="canvas" width="900" height="500" style="border:1px solid #333;"></canvas>   
+ <script>
+ let mycanvas=document.getElementById('canvas');
+ let ctx=mycanvas.getContext("2d");
+ ctx.beginPath();
+ ctx.fillStyle="orange";
+ ctx.arc(400,200,100,0,Math.PI*2);
+ ctx.closePath();
+ ctx.fill();
+
+ ctx.beginPath();
+ ctx.arc(400,200,102,0,Math.PI*2);
+ ctx.strokeStyle="green";
+ ctx.stroke();
+
+ ctx.beginPath();
+ ctx.moveTo(0,0);
+ ctx.lineTo(900,500);
+ ctx.strokeStyle="#999";
+ ctx.lineWidth=5;
+ ctx.stroke();
+
+ ctx.beginPath();
+ ctx.fillStyle="#999";
+ ctx.fillRect(0,200,200,200);   //rect(x,y,width,height)
+ </script>
+</body>
+</html>

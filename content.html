@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CONTENT属性</title>
+    <style>
+    div{
+        width:100px;
+        height:300px;
+        background:red;
+    }
+    div::after {
+        content: "你好";
+    }
+    </style>
+</head>
+<body>
+    <p>::after是一个CSS伪元素，使用::after，你可以从CSS里往页面上新增内容(不再要在HTML里有相应的东西)。</p>
+    <p>虽然最终生成的东西并不是真正的DOM里的内容，但这些内容能像普通内容一样显示，基本的效果是这样的:</p>
+    <div><a href="#">百知科技</a></div>
+</body>
+</html>

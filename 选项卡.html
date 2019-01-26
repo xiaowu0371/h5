@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选显卡</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        .box{
+            width:800px;
+            height:240px;
+            border:1px solid #cccccc;
+            margin:100px auto;
+            overflow: hidden;
+        }
+        ul{
+            float:left;
+            list-style: none;
+        }
+        #title li{
+            width:150px;
+            height:80px;
+            line-height:80px;
+            text-align:center;
+            border-right:1px solid #cccccc;
+            border-bottom:1px solid #cccccc;
+            box-sizing:border-box;
+            cursor:pointer;
+        }
+        #title .on{
+            background:#c0c0c0;
+        }
+        #content{
+            float:left;
+            width:650px;
+            box-sizing: border-box;
+            padding:20px;
+        }
+        #content li{
+            height:240px;
+            display: none;
+        }
+        #content .show{
+            display: block;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var otitle=document.getElementById("title");
+            var atitle=otitle.getElementsByTagName("li");
+            var ocontent=document.getElementById("content");
+            var acontent=ocontent.getElementsByTagName("li");
+            console.log(atitle);
+            console.log(acontent);
+            for(var i=0;i<acontent.length;i++){
+
+                atitle[i].index=i;
+                atitle[i].onmouseover=function () {
+                    for(var j=0;j<atitle.length;j++){
+                        this.className="";
+                        acontent[this.index].className="";
+                    }
+                    this.className="on";
+                    acontent[this.index].className="show";
+                };
+                atitle[i].onmouseout=function () {
+                    this.className="";
+                    acontent[this.index].className="";
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul id="title">
+        <li class="on">Java</li>
+        <li>Python</li>
+        <li>UI</li>
+    </ul>
+    <ul id="content">
+        <li class="show">北京百知教育科技有限公司（中关村互联网+人才基地）由中关村软件园支持设立，是中关村软件园官方唯一指定合作伙伴。线下运营近10年后，于2014年正式成立百知教育集团。在建设中关村人才特区的背景下</li>
+        <li>基地秉承着为全国相关高校及企业提供技术创新创业、科技成果转化、商业项目对接、输送高端技术研发人员等IT技术服务的使命，重点打造为互联网+创新型技术服务示范基地。</li>
+        <li>大数据时代的出现，未来30年将对计划经济和市场经济进行重新定义。在大数据时代，人类获得数据能力远远超过大家想象，我们对世界的认识要提升到新的高度。</li>
+    </ul>
+
+</div>
+</body>
+</html>

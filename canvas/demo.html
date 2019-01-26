@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        canvas{
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="800" height="600"></canvas>
+    <script>
+        var myCanvas = document.querySelector('canvas');
+        var ctx = myCanvas.getContext('2d');
+
+        //正方体的边长
+        var lineW = 200;
+        //起始点横纵坐标
+        var x = 100.5;
+        var y = 200.5;
+
+        //实线部分
+        ctx.moveTo(x,y);
+        ctx.lineTo(x,y+lineW);
+        ctx.lineTo(x+lineW,y+lineW);
+        ctx.lineTo(x+lineW,y);
+        ctx.lineTo(x,y);
+        ctx.lineTo(x+lineW/2,y-lineW/2);
+        ctx.lineTo(x+lineW * 3/2,y-lineW/2);
+        ctx.lineTo(x+lineW * 3/2,y+lineW/2);
+        ctx.lineTo(x+lineW,y+lineW);
+        ctx.lineTo(x+lineW,y);
+        ctx.lineTo(x+lineW * 3/2,y-lineW/2);
+        ctx.stroke();
+
+        //虚线部分
+        ctx.beginPath();
+        ctx.lineTo(x,y+lineW);
+        ctx.lineTo(x+lineW/2,y+lineW/2);
+        ctx.lineTo(x+lineW/2,y-lineW/2);
+        ctx.lineTo(x+lineW/2,y+lineW/2);
+        ctx.lineTo(x+lineW * 3/2,y+lineW/2);
+        ctx.setLineDash([5]);
+        ctx.stroke();
+    </script>
+</body>
+</html>

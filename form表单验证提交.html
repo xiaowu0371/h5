@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单提交</title>
+</head>
+<body>
+<form id="test-register" action="#" target="_blank" onsubmit="return checkRegisterForm()">
+    <p id="test-error" style="color:red"></p>
+    <p>
+        用户名: <input type="text" id="username" name="username">
+    </p>
+    <p>
+        口令: <input type="password" id="password" name="password">
+    </p>
+    <p>
+        重复口令: <input type="password" id="password-2">
+    </p>
+    <p>
+        <button type="submit">提交</button> <button type="reset">重置</button>
+    </p>
+
+    <script>
+    function checkRegisterForm(){
+        var user=document.getElementById("username"),
+            pwd=document.getElementById("password"),
+            pwd2=document.getElementById("password-2"),
+            text_error=document.getElementById("test-error"),
+            inp=document.getElementsByTagName("input");
+            console.log(typeof inp);
+
+        var user_re=/^[a-z0-9]{3,10}$/,
+            pwd_re=/^.{6,20}$/;
+            if(pwd.value===pwd2.value){
+                if(user_re.test(user.value) && pwd_re.test(pwd.value)){
+                    text_error.innerText="注册成功"
+                    return true;
+                }else{
+                    if(user_re.test(user.value)){
+                        text_error.innerText="密码格式不对，请重新输入"
+                        return false;
+                    }else{
+                        if(pwd_re.test(pwd.value)){
+                            return false;
+                            text_error.innerText="用户名格式不对，请重新输入"
+
+                        }else{
+                            return false;
+                            text_error.innerText="用户名、密码格式不对，请重新输入"
+
+                        }
+                    }
+                
+            }
+            }else{
+                text_error.innerText="两次输人密码不一样，请重新输入"
+                return false;
+            }
+            
+    }
+    </script>
+</form>
+</body>
+</html>
